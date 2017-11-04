@@ -1,0 +1,99 @@
+p{
+  .about & {
+      margin-bottom: 30px
+  }
+}
+
+.introduction{
+  margin-bottom: 50px;
+  @include mqSP{
+    margin-bottom: 30px;
+  }
+}
+
+.profile{
+  
+}
+
+.news{
+  ul{
+    li{
+      font-size: 16px;
+    }
+  }
+  span{
+    font-size: 12px;
+    @include mqSP{
+      margin-bottom: 10px;
+      display: block;
+    }
+  }
+}
+
+.olWorks{
+  counter-reset: item;
+  list-style-type: none;
+  li{
+    float: left;
+    width: 290px;
+    height: 264px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    background-color: $c_gray_bg;
+    position: relative;
+    @include mqTB{
+      width: calc-vw(290,1280);
+      height: calc-vw(264,1280);
+      margin: 0 calc-vw(40,1280) calc-vw(40,1280) 0;
+    }
+    @include mqSP{
+      width: calc-vw(280,320);
+      margin-bottom: 20px;
+      margin-right: 0px;
+    }
+    &::before {
+      counter-increment: item -1;
+      content: counter(item, decimal-leading-zero) " "; 
+
+      position: absolute;
+      top: -3px;
+      left: -27px;
+      font-size: 60px;
+      color: $c_w;
+      -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+    }
+    &::after {
+      content: "\e902";
+      @include icofont;
+      font-family: icomoon;
+      font-size: 10px;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    a{
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    
+    p{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+
+      -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      letter-spacing: -5px;
+      @include mqSP{
+        letter-spacing: 0;
+      }
+    }
+  }
+}

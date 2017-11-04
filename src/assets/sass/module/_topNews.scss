@@ -1,0 +1,22 @@
+.topNews{
+  li{
+    position: relative;
+    &::before {
+      content: "";
+      border-left: 1px solid;
+      position: absolute;
+      height: 40px;
+      margin-top: 2px;
+    }
+    &:first-child {
+      margin-bottom: 8px;
+    }
+  }
+  a{
+    padding-left: 15px;
+    display: inline-block;
+    @include mqSP{
+      padding-left: 10px;
+    }
+  }
+}

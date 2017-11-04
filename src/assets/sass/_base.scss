@@ -1,0 +1,27 @@
+html {
+}
+
+body {
+  @include f_base;
+  font-weight: normal;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.75;
+  counter-reset: number 0;           /* number のカウンタを 0 にセット */
+  &.is-fix{
+    overflow: hidden;
+    height: 100%;
+  }
+}
+img {
+  max-width: 100%;
+  @include mqSP{
+    height: auto;
+  }
+}
+
+input:-webkit-autofill{
+  -webkit-transition: background-color 9999s !important;
+  transition: background-color 9999s !important;
+}

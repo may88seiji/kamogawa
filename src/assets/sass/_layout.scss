@@ -1,0 +1,154 @@
+.l-wrapper {
+  overflow: hidden;
+}
+.l-header {
+  position: relative;
+  z-index: $l-header;
+  @include mqSP{
+    border-bottom: 1px solid #f2f2f2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $c_w;
+  }
+}
+
+.l-container {
+  position: relative;
+  z-index: $l-container;
+}
+
+.l-content {
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  @include mqSP{
+    min-height: inherit;
+    height: 100%;
+  }
+  
+  .top & {
+    background-image: url(../img/mv_03.jpg);
+    background-size: cover;
+    @include mqSP{
+      background-position: 50% 50%;
+      margin-top: 55px;
+      height: inherit;
+    }
+  }
+}
+
+.l-main {
+  position: relative;
+  width: calc(100% - 270px);
+  min-height: 500px;
+  margin-top: 120px;
+  overflow-y: scroll;
+  margin-bottom: 100px;
+  @include mqSP{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 55px;
+    overflow-y: inherit;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    right: 0;
+    min-height: inherit;
+  }
+}
+
+.main-inner {
+  width: calc(100% - 60px);
+  @include mqSP{
+    width: calc-vw(280,320);
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+.l-side {
+  width: 270px;
+  padding-top: 48px;
+  overflow-y: scroll;
+  @include mqTB{
+    width: calc-vw(270,1280);
+  }
+  @include mqSP{
+    display: none;
+    overflow-y: inherit;
+  }
+}
+
+.l-side-inner{
+  width: 110px;
+  margin: 0 0 0 60px;
+  padding-bottom: 70px;
+}
+
+.l-topArticle{
+//  position: absolute;
+//  top: 60px;
+//  right: 60px;
+  @include mqSP{
+//    top: calc-vw(20,320);
+//    left: calc-vw(20,320);
+  }
+}
+
+.l-topNews{
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  font-size: 12px;
+  @include mqSP{
+    bottom: 15px;
+    right: 0;
+    left: 0;
+    width: calc-vw(280,320);
+    margin: 0 auto;
+  }
+}
+
+.l-currentPage{
+  position: absolute;
+  right: 60px;
+  top:52px;
+  @include mqSP{
+    display: none;
+  }
+}
+
+.l-pager{
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  font-size: 12px;
+  @include mqSP{
+    bottom: 40px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+  }
+}
+
+.l-footer {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  @include mqSP{
+    display: none;
+  }
+}
+
+@include mqSP{
+  .l-menu{
+    position: absolute;
+    right: 0;
+    top: 2px;
+  }
+}
